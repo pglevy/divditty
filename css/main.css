@@ -1,0 +1,52 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+table {
+	width: 100%;
+}
+
+td {
+	padding: 4px;
+}
+
+input {
+	width: 50%;
+	text-align: center;
+	font-size: 22px !important;
+	height: 30px !important;
+}
+
+.hline {
+	border-bottom: 3px solid #772953;
+}
+
+.vline {
+	border-right: 3px solid #772953;
+}
+
+.hline-thin {
+	border-bottom: 1px solid #999;
+}
+
+.alert {
+	margin-top: 4px;
+}
+
+.btn-toolbar {
+	margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
