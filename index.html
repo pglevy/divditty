@@ -16,11 +16,23 @@
     <body>
         <div class="navbar navbar-inverse navbar-static-top">
             <div class="navbar-inner">
-                <a class="brand" href="#">Long Div Dive In</a>
+                <a class="brand" href="#">Long Div Drill</a>
+                <div class="btn-group pull-right">
+                  <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                    <i class="icon-cog"></i>
+                    <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a id="easy" href="#" data-toggle="dropdown" class="mode">10s</a></li>
+                    <li><a id="hard" href="#" data-toggle="dropdown" class="mode">100s</a></li>
+                  </ul>
+                </div>
             </div>
             <div class="container">
-                <div class="alert alert-info">
-                    Try a new problem.
+                <div class="span8 offset2">
+                    <div class="alert alert-info">
+                        Try a new problem.
+                    </div>
                 </div>
             </div>
         </div>
@@ -41,51 +53,67 @@
         <div class="row">
             <div class="span12">
                     <table>
-                        <tr>
+                        <tr id="answerRow">
                             <td></td>
-                            <td class="hline"><input id="answer100" type="tel" maxlength="1"></td>
-                            <td class="hline"><input id="answer10" type="tel" maxlength="1"></td>
-                            <!-- <td class="hline"><input id="answer1" type="tel" maxlength="1"></td> -->
+                            <td class="hline"><input id="myAnswer1" type="tel" maxlength="1"></td>
+                            <td class="hline"><input id="myAnswer2" type="tel" maxlength="1"></td>
+                            <td class="hline hardCol"><input id="myAnswer3" type="tel" maxlength="1"></td>
                             <td>r</td>
                             <td><input id="remainder" type="tel" maxlength="1"></td>
                         </tr>
                         <tr>
                             <td class="vline"><input id="divisor" type="text" maxlength="1" disabled></td>
-                            <td><input id="dividend100" type="text" maxlength="1" disabled></td>
-                            <td><input id="dividend10" type="text" maxlength="1" disabled></td>
-                            <!-- <td><input id="dividend1" type="text" maxlength="1"></td> -->
+                            <td><input id="dividend1" type="text" maxlength="1" disabled></td>
+                            <td><input id="dividend2" type="text" maxlength="1" disabled></td>
+                            <td class="hardCol"><input id="dividend3" type="text" maxlength="1" disabled></td>
                             <td></td>
                             <td></td>
                         </tr>
-                        <tr>
+                        <tr id="workRow1">
                             <td>
                             <td class="hline-thin"><input id="work1" type="tel" maxlength="1"></td>
                             <td class="hline-thin"><input id="work2" type="tel" maxlength="1"></td>
-                            <!-- <td><input id="dividend1" type="text" maxlength="1"></td> -->
+                            <td class="hline-thin hardCol"><input id="work3" type="text" maxlength="1"></td>
                             <td></td>
                             <td></td>
                         </tr>
-                        <tr>
+                        <tr id="workRow2">
                             <td>
-                            <td><input id="work3" type="tel" maxlength="1"></td>
                             <td><input id="work4" type="tel" maxlength="1"></td>
-                            <!-- <td><input id="dividend1" type="text" maxlength="1"></td> -->
+                            <td><input id="work5" type="tel" maxlength="1"></td>
+                            <td class="hardCol"><input id="work6" type="text" maxlength="1"></td>
                             <td></td>
                             <td></td>
                         </tr>
-                        <tr>
+                        <tr id="workRow3">
                             <td>
-                            <td class="hline-thin"><input id="work5" type="tel" maxlength="1"></td>
-                            <td class="hline-thin"><input id="work6" type="tel" maxlength="1"></td>
-                            <!-- <td><input id="dividend1" type="text" maxlength="1"></td> -->
+                            <td class="hline-thin"><input id="work7" type="tel" maxlength="1"></td>
+                            <td class="hline-thin"><input id="work8" type="tel" maxlength="1"></td>
+                            <td class="hline-thin hardCol"><input id="work9" type="text" maxlength="1"></td>
                             <td></td>
                             <td></td>
                         </tr>
-                        <tr>
+                        <tr id="workRow4">
                             <td>
-                            <td><input id="work7" type="tel" maxlength="1"></td>
-                            <td><input id="work8" type="tel" maxlength="1"></td>
-                            <!-- <td><input id="dividend1" type="text" maxlength="1"></td> -->
+                            <td><input id="work10" type="tel" maxlength="1"></td>
+                            <td><input id="work11" type="tel" maxlength="1"></td>
+                            <td class="hardCol"><input id="work12" type="text" maxlength="1"></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr id="workRow5">
+                            <td>
+                            <td class="hline-thin"><input id="work13" type="tel" maxlength="1"></td>
+                            <td class="hline-thin"><input id="work14" type="tel" maxlength="1"></td>
+                            <td class="hline-thin hardCol"><input id="work15" type="text" maxlength="1"></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr id="workRow6">
+                            <td>
+                            <td><input id="work16" type="tel" maxlength="1"></td>
+                            <td><input id="work17" type="tel" maxlength="1"></td>
+                            <td class="hardCol"><input id="work18" type="text" maxlength="1"></td>
                             <td></td>
                             <td></td>
                         </tr>
