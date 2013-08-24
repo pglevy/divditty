@@ -3,46 +3,44 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
+        <title>Long Div Ditty</title>
+        <meta name="description" content="Practice long division with this catchy little number!">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" href="css/main.css">
-
-        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
     <body>
-        <div class="navbar navbar-inverse navbar-static-top">
+        <div class="navbar navbar-static-top">
             <div class="navbar-inner">
-                <a class="brand" href="#">Long Div Drill</a>
+                <div class="brand"></div>
                 <div class="btn-group pull-right">
-                  <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                    <i class="icon-cog"></i>
-                    <span class="caret"></span>
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a id="easy" href="#" data-toggle="dropdown" class="mode">10s</a></li>
-                    <li><a id="hard" href="#" data-toggle="dropdown" class="mode">100s</a></li>
-                  </ul>
+                    <a class="btn btn-primary btn-small dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="icon-ellipsis-vertical"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#dittyModal" data-toggle="modal"><i class="icon-music"></i> sing</a></li>
+                        <li><a href="#twitterModal" data-toggle="modal"><i class="icon-twitter"></i> follow</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="container">
-                <div class="span8 offset2">
-                    <div class="alert alert-info">
-                        Try a new problem.
-                    </div>
+                <div class="alert alert-info">
+                    <i class="icon-quote-left"></i> <span class="alert-text">Hello! Try a new problem.</span> <i class="icon-quote-right"></i>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="12">
+            <div class="span12">
                 <div class="btn-toolbar pagination-centered">
                     <div class="btn-group">
-                        <a href="#" class="btn btn-large btn-primary" id="newProblem">New</a>
-                        <a href="#" class="btn btn-large" id="checkAnswer">Check</a>
-                        <a href="#" class="btn btn-large" id="showAnswer">Show</a>
+                        <a href="#" class="btn btn-success" id="newProblem">New</a>
+                        <a href="#" class="btn btn-success" id="checkAnswer">Check</a>
+                        <a href="#" class="btn btn-success" id="showAnswer">Show</a>
                     </div>
                 </div>
             </div>
@@ -52,83 +50,102 @@
 
         <div class="row">
             <div class="span12">
-                    <table>
-                        <tr id="answerRow">
-                            <td></td>
-                            <td class="hline"><input id="myAnswer1" type="tel" maxlength="1"></td>
-                            <td class="hline"><input id="myAnswer2" type="tel" maxlength="1"></td>
-                            <td class="hline hardCol"><input id="myAnswer3" type="tel" maxlength="1"></td>
-                            <td>r</td>
-                            <td><input id="remainder" type="tel" maxlength="1"></td>
-                        </tr>
-                        <tr>
-                            <td class="vline"><input id="divisor" type="text" maxlength="1" disabled></td>
-                            <td><input id="dividend1" type="text" maxlength="1" disabled></td>
-                            <td><input id="dividend2" type="text" maxlength="1" disabled></td>
-                            <td class="hardCol"><input id="dividend3" type="text" maxlength="1" disabled></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr id="workRow1">
-                            <td>
-                            <td class="hline-thin"><input id="work1" type="tel" maxlength="1"></td>
-                            <td class="hline-thin"><input id="work2" type="tel" maxlength="1"></td>
-                            <td class="hline-thin hardCol"><input id="work3" type="text" maxlength="1"></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr id="workRow2">
-                            <td>
-                            <td><input id="work4" type="tel" maxlength="1"></td>
-                            <td><input id="work5" type="tel" maxlength="1"></td>
-                            <td class="hardCol"><input id="work6" type="text" maxlength="1"></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr id="workRow3">
-                            <td>
-                            <td class="hline-thin"><input id="work7" type="tel" maxlength="1"></td>
-                            <td class="hline-thin"><input id="work8" type="tel" maxlength="1"></td>
-                            <td class="hline-thin hardCol"><input id="work9" type="text" maxlength="1"></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr id="workRow4">
-                            <td>
-                            <td><input id="work10" type="tel" maxlength="1"></td>
-                            <td><input id="work11" type="tel" maxlength="1"></td>
-                            <td class="hardCol"><input id="work12" type="text" maxlength="1"></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr id="workRow5">
-                            <td>
-                            <td class="hline-thin"><input id="work13" type="tel" maxlength="1"></td>
-                            <td class="hline-thin"><input id="work14" type="tel" maxlength="1"></td>
-                            <td class="hline-thin hardCol"><input id="work15" type="text" maxlength="1"></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr id="workRow6">
-                            <td>
-                            <td><input id="work16" type="tel" maxlength="1"></td>
-                            <td><input id="work17" type="tel" maxlength="1"></td>
-                            <td class="hardCol"><input id="work18" type="text" maxlength="1"></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </table>
-
-                    <hr>
-
+                <table>
+                    <tr id="answerRow">
+                        <td></td>
+                        <td class="hline"><div class="control-group"><input id="myAnswer1" type="tel" maxlength="1" class="answer"></div></td>
+                        <td class="hline"><div class="control-group"><input id="myAnswer2" type="tel" maxlength="1" class="answer"></div></td>
+                        <td class="hline hardCol"><div class="control-group"><input id="myAnswer3" type="tel" maxlength="1" class="answer"></div></td>
+                        <td>r</td>
+                        <td><div class="control-group"><input id="remainder" type="tel" maxlength="1" class="answer"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="vline"><input id="divisor" type="tel" maxlength="1" disabled></td>
+                        <td><input id="dividend1" type="tel" maxlength="1" disabled></td>
+                        <td><input id="dividend2" type="tel" maxlength="1" disabled></td>
+                        <td class="hardCol"><input id="dividend3" type="tel" maxlength="1" disabled></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr id="workRow1">
+                        <td>
+                        <td class="hline-thin"><input id="work1" type="tel" maxlength="1"></td>
+                        <td class="hline-thin"><input id="work2" type="tel" maxlength="1"></td>
+                        <td class="hline-thin hardCol"><input id="work3" type="tel" maxlength="1"></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr id="workRow2">
+                        <td>
+                        <td><input id="work4" type="tel" maxlength="1"></td>
+                        <td><input id="work5" type="tel" maxlength="1"></td>
+                        <td class="hardCol"><input id="work6" type="tel" maxlength="1"></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr id="workRow3">
+                        <td>
+                        <td class="hline-thin"><input id="work7" type="tel" maxlength="1"></td>
+                        <td class="hline-thin"><input id="work8" type="tel" maxlength="1"></td>
+                        <td class="hline-thin hardCol"><input id="work9" type="tel" maxlength="1"></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr id="workRow4">
+                        <td>
+                        <td><input id="work10" type="tel" maxlength="1"></td>
+                        <td><input id="work11" type="tel" maxlength="1"></td>
+                        <td class="hardCol"><input id="work12" type="tel" maxlength="1"></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr id="workRow5">
+                        <td>
+                        <td class="hline-thin"><input id="work13" type="tel" maxlength="1"></td>
+                        <td class="hline-thin"><input id="work14" type="tel" maxlength="1"></td>
+                        <td class="hline-thin hardCol"><input id="work15" type="tel" maxlength="1"></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr id="workRow6">
+                        <td>
+                        <td><input id="work16" type="tel" maxlength="1"></td>
+                        <td><input id="work17" type="tel" maxlength="1"></td>
+                        <td class="hardCol"><input id="work18" type="tel" maxlength="1"></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
             </div>
         </div>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+        <div id="dittyModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h3>Sing along&hellip;</h3>
+            </div>
+            <div class="modal-body">
+                <i class="icon-music" style="float:left;"></i> 
+                <p style="margin-left: 18px;">First you do division,<br>
+                    Then multiplication,<br>
+                    Then you do substraction,<br>
+                    Then you carry down! <i class="icon-music"></i></p>
+                    <!-- <audio src="#" controls> -->
+            </div>
+        </div>
 
-        <script src="js/vendor/bootstrap.min.js"></script>
+        <div id="twitterModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h3>Questions? Comments?</h3>
+            </div>
+            <div class="modal-body">
+                <p>Tweet me at <a href="#">@longdivditty</a>.</p>
+            </div>
+        </div>
 
+        <script src="js/jquery-1.10.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
         <script src="js/main.js"></script>
     </body>
 </html>
