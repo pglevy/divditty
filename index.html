@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Long Div Ditty</title>
+        <title>Div Ditty</title>
         <meta name="description" content="Practice long division with this catchy little number!">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -34,13 +34,15 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="span12">
-                <div class="btn-toolbar pagination-centered">
-                    <div class="btn-group">
-                        <a href="#" class="btn btn-success" id="newProblem">New</a>
-                        <a href="#" class="btn btn-success" id="checkAnswer">Check</a>
-                        <a href="#" class="btn btn-success" id="showAnswer">Show</a>
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <div class="btn-toolbar pagination-centered">
+                        <div class="btn-group">
+                            <a href="#" class="btn btn-success" id="newProblem">New</a>
+                            <a href="#" class="btn btn-success" id="checkAnswer">Check</a>
+                            <a href="#" class="btn btn-success" id="showAnswer">Show</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -48,74 +50,76 @@
 
         <hr>
 
-        <div class="row">
-            <div class="span12">
-                <table>
-                    <tr id="answerRow">
-                        <td></td>
-                        <td class="hline"><div class="control-group"><input id="myAnswer1" type="tel" maxlength="1" class="answer"></div></td>
-                        <td class="hline"><div class="control-group"><input id="myAnswer2" type="tel" maxlength="1" class="answer"></div></td>
-                        <td class="hline hardCol"><div class="control-group"><input id="myAnswer3" type="tel" maxlength="1" class="answer"></div></td>
-                        <td>r</td>
-                        <td><div class="control-group"><input id="remainder" type="tel" maxlength="1" class="answer"></div></td>
-                    </tr>
-                    <tr>
-                        <td class="vline"><input id="divisor" type="tel" maxlength="1" disabled></td>
-                        <td><input id="dividend1" type="tel" maxlength="1" disabled></td>
-                        <td><input id="dividend2" type="tel" maxlength="1" disabled></td>
-                        <td class="hardCol"><input id="dividend3" type="tel" maxlength="1" disabled></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr id="workRow1">
-                        <td>
-                        <td class="hline-thin"><input id="work1" type="tel" maxlength="1"></td>
-                        <td class="hline-thin"><input id="work2" type="tel" maxlength="1"></td>
-                        <td class="hline-thin hardCol"><input id="work3" type="tel" maxlength="1"></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr id="workRow2">
-                        <td>
-                        <td><input id="work4" type="tel" maxlength="1"></td>
-                        <td><input id="work5" type="tel" maxlength="1"></td>
-                        <td class="hardCol"><input id="work6" type="tel" maxlength="1"></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr id="workRow3">
-                        <td>
-                        <td class="hline-thin"><input id="work7" type="tel" maxlength="1"></td>
-                        <td class="hline-thin"><input id="work8" type="tel" maxlength="1"></td>
-                        <td class="hline-thin hardCol"><input id="work9" type="tel" maxlength="1"></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr id="workRow4">
-                        <td>
-                        <td><input id="work10" type="tel" maxlength="1"></td>
-                        <td><input id="work11" type="tel" maxlength="1"></td>
-                        <td class="hardCol"><input id="work12" type="tel" maxlength="1"></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr id="workRow5">
-                        <td>
-                        <td class="hline-thin"><input id="work13" type="tel" maxlength="1"></td>
-                        <td class="hline-thin"><input id="work14" type="tel" maxlength="1"></td>
-                        <td class="hline-thin hardCol"><input id="work15" type="tel" maxlength="1"></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr id="workRow6">
-                        <td>
-                        <td><input id="work16" type="tel" maxlength="1"></td>
-                        <td><input id="work17" type="tel" maxlength="1"></td>
-                        <td class="hardCol"><input id="work18" type="tel" maxlength="1"></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </table>
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <table>
+                        <tr id="answerRow">
+                            <td></td>
+                            <td class="hline"><div class="control-group"><input id="myAnswer1" type="tel" maxlength="1" class="answer"></div></td>
+                            <td class="hline"><div class="control-group"><input id="myAnswer2" type="tel" maxlength="1" class="answer"></div></td>
+                            <td class="hline hardCol"><div class="control-group"><input id="myAnswer3" type="tel" maxlength="1" class="answer"></div></td>
+                            <td>r</td>
+                            <td><div class="control-group"><input id="remainder" type="tel" maxlength="1" class="answer"></div></td>
+                        </tr>
+                        <tr>
+                            <td class="vline"><input id="divisor" type="tel" maxlength="1" disabled></td>
+                            <td><input id="dividend1" type="tel" maxlength="1" disabled></td>
+                            <td><input id="dividend2" type="tel" maxlength="1" disabled></td>
+                            <td class="hardCol"><input id="dividend3" type="tel" maxlength="1" disabled></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr id="workRow1">
+                            <td>
+                            <td class="hline-thin"><input id="work1" type="tel" maxlength="1"></td>
+                            <td class="hline-thin"><input id="work2" type="tel" maxlength="1"></td>
+                            <td class="hline-thin hardCol"><input id="work3" type="tel" maxlength="1"></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr id="workRow2">
+                            <td>
+                            <td><input id="work4" type="tel" maxlength="1"></td>
+                            <td><input id="work5" type="tel" maxlength="1"></td>
+                            <td class="hardCol"><input id="work6" type="tel" maxlength="1"></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr id="workRow3">
+                            <td>
+                            <td class="hline-thin"><input id="work7" type="tel" maxlength="1"></td>
+                            <td class="hline-thin"><input id="work8" type="tel" maxlength="1"></td>
+                            <td class="hline-thin hardCol"><input id="work9" type="tel" maxlength="1"></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr id="workRow4">
+                            <td>
+                            <td><input id="work10" type="tel" maxlength="1"></td>
+                            <td><input id="work11" type="tel" maxlength="1"></td>
+                            <td class="hardCol"><input id="work12" type="tel" maxlength="1"></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr id="workRow5">
+                            <td>
+                            <td class="hline-thin"><input id="work13" type="tel" maxlength="1"></td>
+                            <td class="hline-thin"><input id="work14" type="tel" maxlength="1"></td>
+                            <td class="hline-thin hardCol"><input id="work15" type="tel" maxlength="1"></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr id="workRow6">
+                            <td>
+                            <td><input id="work16" type="tel" maxlength="1"></td>
+                            <td><input id="work17" type="tel" maxlength="1"></td>
+                            <td class="hardCol"><input id="work18" type="tel" maxlength="1"></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
 
@@ -140,7 +144,7 @@
                 <h3>Questions? Comments?</h3>
             </div>
             <div class="modal-body">
-                <p>Tweet me at <a href="#">@longdivditty</a>.</p>
+                <p>Follow <a href="https://twitter.com/divditty">@divditty</a> on Twitter.</p>
             </div>
         </div>
 
