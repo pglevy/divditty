@@ -3,22 +3,19 @@ $(document).ready(function() {
 	var answerRounded;
 	var remainder;
 	var arraySize;
-
-	//set the mode
-	var mode = "easy";
-	console.log("mode = " + mode);
-	
-	if (mode == "hard") {
-		arraySize = 5;
-	} else {
-		arraySize = 4;
-		$('.hardCol').hide();
-	}
+	var mode;
 
 	//disable check and show buttons when starting new problem
 	function disableButtons() {
 		$('#checkAnswer').addClass('disabled');
 		$('#showAnswer').addClass('disabled');
+		$('#checkAnswer').off('click');
+		$('#showAnswer').off('click');
+	}
+
+	//disable answer fields so there can't be input before new problem is generated
+	function disableAnswers() {
+		$('.answer').prop('disabled', true);
 	}
 
 	//hide extra work rows
@@ -37,7 +34,28 @@ $(document).ready(function() {
 		answerRounded = null;
 		remainder = null;
 		disableButtons();
+		disableAnswers();
 		hideRows();
+		$('.alert-text').text("Try a new problem.");
+	}
+
+	//set the mode (easy or hard)
+	function setMode(m) {
+		if (m == "hard") {
+			$('.hardCol').show();
+			arraySize = 5;
+			mode = "hard";
+			$('#hard').hide();
+			$('#easy').show();
+		} else {
+			$('.hardCol').hide();
+			arraySize = 4;
+			mode = "easy";
+			$('#easy').hide();
+			$('#hard').show();
+		}
+		console.log("mode = " + m);
+		resetEverything();
 	}
 
 	//display answer rows as needed
@@ -57,6 +75,7 @@ $(document).ready(function() {
 	//after answer has been checked, enable show button in case answer is wrong
 	$('input').blur(function() {
 		$('#checkAnswer').removeClass('disabled');
+		$('#checkAnswer').on('click', checkAnswer);
 	});
 
 	//select input when tapped for easier input
@@ -64,18 +83,19 @@ $(document).ready(function() {
 	   $(this).select();
 	});
 
-	//set mode
+	//close alert box
+	$('.alert button').click(function() {
+		$('.alert').fadeOut();
+	})
+
+	//call setMode()
 	$('.mode').click(function() {
 		//console.log($(this.id));
 		if ($(this.id).selector == "hard") {
-			mode = "hard";
-			$('.hardCol').show();
+			setMode("hard");
 		} else {
-			mode = "easy";
-			$('.hardCol').hide();
-		}		
-		console.log(mode);
-		resetEverything();	
+			setMode("easy");
+		}			
 	});
 
 	//create array for dividend and divsors
@@ -84,8 +104,12 @@ $(document).ready(function() {
 	$('#newProblem').click(function() {
 		//clear all the inputs
 		$('input').val(null);
+		$('.control-group').removeClass('error');
+		$('.control-group').removeClass('success');
+		//hide the rows
+		hideRows();
 		//update the alert
-		$('.alert').text('You can do it!');
+		$('.alert-text').text('You can do it!');
 		//$('.alert').hide();
 
 		//add random numbers to the array
@@ -123,13 +147,16 @@ $(document).ready(function() {
 		console.log("answerRounded: " + answerRounded);
 		console.log("remainder: " + remainder);
 
+		//enable answer inputs
+		$('.answer').prop('disabled', false);
+
 		//alert(r[1] + ' ' + r[2] + ' ' + r[3] + ' ' + r[4]);
 		//alert(r);
 	});
 
-	$('#checkAnswer').click(function() {
+	function checkAnswer() {
 		//clear the alert
-		$('.alert').text('');
+		$('.alert-text').text('');
 
 		//calculate my answer
 		var myAnswer1 = $('#myAnswer1').val();
@@ -149,19 +176,21 @@ $(document).ready(function() {
 
 		if ( myAnswer == answerRounded && myRemainder == remainder ) {
 			console.log("correct!");
-			$('.alert').append("You did it! Try another one.");
-			$('.alert').show();
+			$('.alert-text').text("You did it! Try another one.");
+			$('.control-group').addClass('success');
 		} else {
 			console.log("incorrect");
-			$('.alert').append("Uh oh... Try again.");
-			$('.alert').show();
+			$('.alert-text').html("Uh oh&hellip; Try again.");
 			$('#showAnswer').removeClass('disabled');
+			$('#showAnswer').on('click', showAnswer);
+			$('.control-group').addClass('error');
 		}
-	})
+	}
 
-	$('#showAnswer').click(function() {
+	function showAnswer() {
 		var answerText = answerRounded.toString();
 		console.log(answerText);
+		$('.alert-text').html('This is the correct answer.<br>Try another one!');
 		if (mode == "hard") {
 			var answer1 = answerText.substring(0, 1);
 			var answer2 = answerText.substring(1, 2);
@@ -193,7 +222,10 @@ $(document).ready(function() {
 		if ( remainder > 0 ) {
 			$('#remainder').val(remainder);
 		}
-	});
+		$('.control-group').removeClass('error');
+		$('.control-group').addClass('success');
+	}
 
 	resetEverything();
+	setMode("easy");
 });

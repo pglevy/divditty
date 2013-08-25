@@ -1,0 +1,14 @@
+{
+  "name": "Div Ditty",
+  "description": "Practice long division with this catchy little number.",
+  "version": "0.0.0.1",
+  "manifest_version": 2,
+  "icons": {
+    "128": "icon_128.png"
+  },
+  "app": {
+    "launch": {
+      "web_url": "http://pglevy.github.io/divditty/"
+    }
+  }
+}
