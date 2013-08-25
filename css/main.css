@@ -21,6 +21,7 @@ body {
 	width: 152px;
 	height: 39px;
 	padding: 0;
+	margin-left: 0em;
 	margin-top: 5px;
 	background: url('../img/logo.png');
 	background-repeat: no-repeat;
@@ -146,9 +147,10 @@ input[type="tel"]:focus {
 }
 
 input[disabled] {
-	color: #333;
+	color: #000;
 	background-color: #ecf0f1;
 	border-color: #fff;
+	opacity: 1;
 }
 
 .hline {

@@ -191,6 +191,7 @@ $(document).ready(function() {
 		var answerText = answerRounded.toString();
 		console.log(answerText);
 		$('.alert-text').html('This is the correct answer.<br>Try another one!');
+		$('input.answer').val(null);
 		if (mode == "hard") {
 			var answer1 = answerText.substring(0, 1);
 			var answer2 = answerText.substring(1, 2);
